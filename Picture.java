@@ -368,6 +368,34 @@ public class Picture
 
    ////////////////////// methods ///////////////////////////////////////
 
+   //Written by: Totally not Shahmir
+
+public void mirrorTopToBottom()
+{
+  //create a 2darray of pixels
+  Pixel[][] pixels = this.getPixels2D();
+  //create top pixels variable 
+  Pixel topPixel = null;
+  //create bottom pixels variable
+  Pixel bottomPixel = null;
+  //loop thru the rows
+  for(int row = 0;row<pixels.length/2;row++)
+  {
+    //loop thru the coloms
+    for(int col = 0;col<pixels[0].length;col++)
+    {
+      //get pixels[row][col] and set it topPixels 
+      topPixel = pixels[row][col];
+
+      //get pixels[pixels.length-row-1][col] and set it bottomPixelPixels 
+      bottomPixel = pixels[pixels.length-row-1][col];
+
+      //get topPixel color and set it as bottom pixel color
+      bottomPixel.setColor(topPixel.getColor());
+    }
+
+  }
+}
    
 
 
